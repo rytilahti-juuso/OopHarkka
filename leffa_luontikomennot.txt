@@ -1,0 +1,64 @@
+
+
+-- Table: public.asiakas
+
+-- DROP TABLE public.asiakas;
+
+CREATE TABLE public.asiakas
+(
+    nimi character varying COLLATE pg_catalog."default" NOT NULL,
+    osoite character varying COLLATE pg_catalog."default",
+    syntymavuosi integer,
+    sotu character varying(11) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT sotu_avain PRIMARY KEY (sotu)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.asiakas
+    OWNER to postgres;
+
+-- Table: public.mallitaulu
+
+-- DROP TABLE public.mallitaulu;
+
+CREATE TABLE public.mallitaulu
+(
+    paikka character varying COLLATE pg_catalog."default" NOT NULL,
+    status character varying COLLATE pg_catalog."default",
+    CONSTRAINT "paikkaPaaavain1" PRIMARY KEY (paikka)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.mallitaulu
+    OWNER to postgres;
+
+-- Table: public.naytokset
+
+-- DROP TABLE public.naytokset;
+
+CREATE TABLE public.naytokset
+(
+    pvm character varying COLLATE pg_catalog."default",
+    nimi character varying COLLATE pg_catalog."default" NOT NULL,
+    kesto character varying(8) COLLATE pg_catalog."default" NOT NULL,
+    alkamisaika character varying(5) COLLATE pg_catalog."default" NOT NULL,
+    sali character varying(5) COLLATE pg_catalog."default" NOT NULL,
+    yks_koodi character varying COLLATE pg_catalog."default" NOT NULL
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.naytokset
+    OWNER to postgres;
+
+
+
+
